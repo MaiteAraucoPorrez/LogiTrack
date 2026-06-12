@@ -28,7 +28,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
     }}
   >
     <Box>
-      <Typography variant="h4" component="h1" color="primary" sx={{ fontWeight: 700 }}>
+      <Typography variant="h4" component="h1" color="primary" sx={{ fontWeight: 700, fontSize: { xs: '1.4rem', sm: '2rem' } }}>
         {title}
       </Typography>
       {subtitle && (

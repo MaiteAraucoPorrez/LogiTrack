@@ -108,7 +108,7 @@ const RoutesPage: React.FC = () => {
       {fetchError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFetchError(null)}>{fetchError}</Alert>}
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -155,19 +155,19 @@ const RoutesPage: React.FC = () => {
           <DialogContent>
             {formError && <Alert severity="error" sx={{ mb: 2 }}>{formError}</Alert>}
             <Grid container spacing={2}>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="origin" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Origen *</label>
                 <TextField id="origin" {...register('origin')} fullWidth size="small" placeholder="Ej: La Paz" error={!!errors.origin} helperText={errors.origin?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="dest" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Destino *</label>
                 <TextField id="dest" {...register('destination')} fullWidth size="small" placeholder="Ej: Santa Cruz" error={!!errors.destination} helperText={errors.destination?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="distance" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Distancia (km) *</label>
                 <TextField id="distance" {...register('distanceKm')} fullWidth size="small" type="number" slotProps={{ htmlInput: { min: 0, step: 0.1 } }} error={!!errors.distanceKm} helperText={errors.distanceKm?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="baseCost" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Costo Base ($) *</label>
                 <TextField id="baseCost" {...register('baseCost')} fullWidth size="small" type="number" slotProps={{ htmlInput: { min: 0, step: 0.01 } }} error={!!errors.baseCost} helperText={errors.baseCost?.message} />
               </Grid>

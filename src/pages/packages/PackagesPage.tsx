@@ -106,7 +106,7 @@ const PackagesPage: React.FC = () => {
       {fetchError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFetchError(null)}>{fetchError}</Alert>}
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -153,11 +153,11 @@ const PackagesPage: React.FC = () => {
                 <label htmlFor="description" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Descripción *</label>
                 <TextField id="description" {...register('description')} fullWidth size="small" placeholder="Descripción del contenido del paquete" error={!!errors.description} helperText={errors.description?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="weight" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Peso (kg) *</label>
                 <TextField id="weight" {...register('weight')} fullWidth size="small" type="number" slotProps={{ htmlInput: { step: 0.01, min: 0 } }} error={!!errors.weight} helperText={errors.weight?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="price" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Precio ($) *</label>
                 <TextField id="price" {...register('price')} fullWidth size="small" type="number" slotProps={{ htmlInput: { step: 0.01, min: 0 } }} error={!!errors.price} helperText={errors.price?.message} />
               </Grid>

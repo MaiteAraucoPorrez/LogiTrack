@@ -147,7 +147,7 @@ const DrawerContent: React.FC = () => {
 const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => (
   <Box
     component="nav"
-    sx={{ width: { sm: DRAWER_WIDTH }, flexShrink: { sm: 0 } }}
+    sx={{ width: { md: DRAWER_WIDTH }, flexShrink: { md: 0 } }}
     aria-label="menú de navegación"
   >
     <Drawer
@@ -156,7 +156,7 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => (
       onClose={onClose}
       ModalProps={{ keepMounted: true }}
       sx={{
-        display: { xs: 'block', sm: 'none' },
+        display: { xs: 'block', md: 'none' },
         '& .MuiDrawer-paper': { width: DRAWER_WIDTH, boxSizing: 'border-box', border: 'none' },
       }}
     >
@@ -166,7 +166,7 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => (
     <Drawer
       variant="permanent"
       sx={{
-        display: { xs: 'none', sm: 'block' },
+        display: { xs: 'none', md: 'block' },
         '& .MuiDrawer-paper': { width: DRAWER_WIDTH, boxSizing: 'border-box', border: 'none' },
       }}
       open

@@ -126,7 +126,7 @@ const DriversPage: React.FC = () => {
       {fetchError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFetchError(null)}>{fetchError}</Alert>}
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -175,27 +175,27 @@ const DriversPage: React.FC = () => {
                 <label htmlFor="dname" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Nombre Completo *</label>
                 <TextField id="dname" {...register('fullName')} fullWidth size="small" placeholder="Ej: Carlos Mamani" error={!!errors.fullName} helperText={errors.fullName?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="license" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>N° de Licencia *</label>
                 <TextField id="license" {...register('licenseNumber')} fullWidth size="small" placeholder="Ej: LC-12345" error={!!errors.licenseNumber} helperText={errors.licenseNumber?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="dphone" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Teléfono *</label>
                 <TextField id="dphone" {...register('phone')} fullWidth size="small" placeholder="Ej: 72345678" error={!!errors.phone} helperText={errors.phone?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="demail" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Correo Electrónico *</label>
                 <TextField id="demail" {...register('email')} fullWidth size="small" type="email" placeholder="Ej: carlos@logitrack.com" error={!!errors.email} helperText={errors.email?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="dob" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Fecha de Nacimiento *</label>
                 <TextField id="dob" {...register('dateOfBirth')} fullWidth size="small" type="date" error={!!errors.dateOfBirth} helperText={errors.dateOfBirth?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="dcity" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Ciudad</label>
                 <TextField id="dcity" {...register('city')} fullWidth size="small" placeholder="Ej: La Paz (opcional)" />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth size="small" error={!!errors.status}>
                   <InputLabel id="dstatus-label">Estado *</InputLabel>
                   <Controller name="status" control={control} render={({ field }) => (

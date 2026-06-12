@@ -142,7 +142,7 @@ const DashboardPage: React.FC = () => {
             <Typography variant="h6" sx={{ fontWeight: 700 }} gutterBottom color="primary">
               Envíos recientes
             </Typography>
-            <TableContainer component={Paper} elevation={0}>
+            <TableContainer component={Paper} elevation={0} sx={{ overflowX: 'auto' }}>
               <Table size="small">
                 <TableHead>
                   <TableRow>

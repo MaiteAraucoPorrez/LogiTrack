@@ -139,7 +139,7 @@ const ShipmentsPage: React.FC = () => {
       {fetchError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFetchError(null)}>{fetchError}</Alert>}
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -188,27 +188,27 @@ const ShipmentsPage: React.FC = () => {
           <DialogContent>
             {formError && <Alert severity="error" sx={{ mb: 2 }}>{formError}</Alert>}
             <Grid container spacing={2}>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="trackingNumber" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>N° de Seguimiento *</label>
                 <TextField id="trackingNumber" {...register('trackingNumber')} fullWidth size="small" placeholder="Ej: TRK-001" error={!!errors.trackingNumber} helperText={errors.trackingNumber?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="shippingDate" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Fecha de Envío *</label>
                 <TextField id="shippingDate" {...register('shippingDate')} fullWidth size="small" type="date" error={!!errors.shippingDate} helperText={errors.shippingDate?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="scustomerId" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>ID del Cliente *</label>
                 <TextField id="scustomerId" {...register('customerId')} fullWidth size="small" type="number" error={!!errors.customerId} helperText={errors.customerId?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="srouteId" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>ID de la Ruta *</label>
                 <TextField id="srouteId" {...register('routeId')} fullWidth size="small" type="number" error={!!errors.routeId} helperText={errors.routeId?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="stotalCost" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Costo Total ($) *</label>
                 <TextField id="stotalCost" {...register('totalCost')} fullWidth size="small" type="number" slotProps={{ htmlInput: { min: 0, step: 0.01 } }} error={!!errors.totalCost} helperText={errors.totalCost?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth size="small" error={!!errors.state}>
                   <InputLabel id="sstate-label">Estado *</InputLabel>
                   <Controller name="state" control={control} render={({ field }) => (

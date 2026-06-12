@@ -129,7 +129,7 @@ const WarehousesPage: React.FC = () => {
       {fetchError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFetchError(null)}>{fetchError}</Alert>}
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -176,11 +176,11 @@ const WarehousesPage: React.FC = () => {
           <DialogContent>
             {formError && <Alert severity="error" sx={{ mb: 2 }}>{formError}</Alert>}
             <Grid container spacing={2}>
-              <Grid size={8}>
+              <Grid size={{ xs: 12, sm: 8 }}>
                 <label htmlFor="wname" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Nombre *</label>
                 <TextField id="wname" {...register('name')} fullWidth size="small" placeholder="Ej: Almacén Central La Paz" error={!!errors.name} helperText={errors.name?.message} />
               </Grid>
-              <Grid size={4}>
+              <Grid size={{ xs: 12, sm: 4 }}>
                 <label htmlFor="wcode" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Código *</label>
                 <TextField id="wcode" {...register('code')} fullWidth size="small" placeholder="Ej: WH-001" error={!!errors.code} helperText={errors.code?.message} />
               </Grid>
@@ -188,27 +188,27 @@ const WarehousesPage: React.FC = () => {
                 <label htmlFor="waddress" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Dirección *</label>
                 <TextField id="waddress" {...register('address')} fullWidth size="small" placeholder="Ej: Av. Arce #1234" error={!!errors.address} helperText={errors.address?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="wcity" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Ciudad *</label>
                 <TextField id="wcity" {...register('city')} fullWidth size="small" placeholder="Ej: La Paz" error={!!errors.city} helperText={errors.city?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="wdept" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Departamento *</label>
                 <TextField id="wdept" {...register('department')} fullWidth size="small" placeholder="Ej: La Paz" error={!!errors.department} helperText={errors.department?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="wphone" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Teléfono *</label>
                 <TextField id="wphone" {...register('phone')} fullWidth size="small" placeholder="Ej: 22234567" error={!!errors.phone} helperText={errors.phone?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="wemail" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Correo Electrónico</label>
                 <TextField id="wemail" {...register('email')} fullWidth size="small" type="email" placeholder="Opcional" error={!!errors.email} helperText={errors.email?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="wcap" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Cap. Máxima (m³) *</label>
                 <TextField id="wcap" {...register('maxCapacityM3')} fullWidth size="small" type="number" slotProps={{ htmlInput: { min: 0, step: 0.1 } }} error={!!errors.maxCapacityM3} helperText={errors.maxCapacityM3?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth size="small" error={!!errors.type}>
                   <InputLabel id="wtype-label">Tipo *</InputLabel>
                   <Controller name="type" control={control} render={({ field }) => (
@@ -219,11 +219,11 @@ const WarehousesPage: React.FC = () => {
                   {errors.type && <FormHelperText>{errors.type.message}</FormHelperText>}
                 </FormControl>
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="wmgr" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Nombre del Encargado</label>
                 <TextField id="wmgr" {...register('managerName')} fullWidth size="small" placeholder="Opcional" />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="whours" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Horario de Operación</label>
                 <TextField id="whours" {...register('operatingHours')} fullWidth size="small" placeholder="Ej: 8:00 - 18:00" />
               </Grid>

@@ -158,7 +158,7 @@ const AddressesPage: React.FC = () => {
       {fetchError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFetchError(null)}>{fetchError}</Alert>}
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -216,11 +216,11 @@ const AddressesPage: React.FC = () => {
           <DialogContent>
             {formError && <Alert severity="error" sx={{ mb: 2 }}>{formError}</Alert>}
             <Grid container spacing={2}>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="acustomerId" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>ID del Cliente *</label>
                 <TextField id="acustomerId" {...register('customerId')} fullWidth size="small" type="number" placeholder="Ej: 1" error={!!errors.customerId} helperText={errors.customerId?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth size="small" error={!!errors.type}>
                   <InputLabel id="atype-label">Tipo de Dirección *</InputLabel>
                   <Controller name="type" control={control} render={({ field }) => (
@@ -243,11 +243,11 @@ const AddressesPage: React.FC = () => {
                 <label htmlFor="street" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Calle / Dirección *</label>
                 <TextField id="street" {...register('street')} fullWidth size="small" placeholder="Ej: Av. 6 de Agosto #2170" error={!!errors.street} helperText={errors.street?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="acity" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Ciudad *</label>
                 <TextField id="acity" {...register('city')} fullWidth size="small" placeholder="Ej: La Paz" error={!!errors.city} helperText={errors.city?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth size="small" error={!!errors.department}>
                   <InputLabel id="adept-label">Departamento *</InputLabel>
                   <Controller name="department" control={control} render={({ field }) => (
@@ -258,19 +258,19 @@ const AddressesPage: React.FC = () => {
                   {errors.department && <FormHelperText>{errors.department.message}</FormHelperText>}
                 </FormControl>
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="azone" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Zona</label>
                 <TextField id="azone" {...register('zone')} fullWidth size="small" placeholder="Ej: Sopocachi (opcional)" />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="aref" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Referencia</label>
                 <TextField id="aref" {...register('reference')} fullWidth size="small" placeholder="Ej: Edificio azul (opcional)" />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="acontact" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Nombre de Contacto</label>
                 <TextField id="acontact" {...register('contactName')} fullWidth size="small" placeholder="Opcional" />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="acontactPhone" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Teléfono de Contacto</label>
                 <TextField id="acontactPhone" {...register('contactPhone')} fullWidth size="small" placeholder="Ej: 71234567 (opcional)" />
               </Grid>

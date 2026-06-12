@@ -121,7 +121,7 @@ const CustomersPage: React.FC = () => {
           size="small"
           value={search}
           onChange={(e) => { setSearch(e.target.value); setPage(0); }}
-          sx={{ width: 280 }}
+          sx={{ width: { xs: '100%', sm: 280 } }}
           slotProps={{
             input: { startAdornment: <InputAdornment position="start"><SearchIcon fontSize="small" /></InputAdornment> },
             htmlInput: { 'aria-label': 'buscar clientes' },
@@ -131,7 +131,7 @@ const CustomersPage: React.FC = () => {
 
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>

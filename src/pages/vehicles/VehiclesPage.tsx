@@ -122,7 +122,7 @@ const VehiclesPage: React.FC = () => {
       {fetchError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFetchError(null)}>{fetchError}</Alert>}
       <Card>
         {loading ? <LoadingSpinner /> : (
-          <TableContainer>
+          <TableContainer sx={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -167,15 +167,15 @@ const VehiclesPage: React.FC = () => {
           <DialogContent>
             {formError && <Alert severity="error" sx={{ mb: 2 }}>{formError}</Alert>}
             <Grid container spacing={2}>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="plate" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Placa *</label>
                 <TextField id="plate" {...register('plateNumber')} fullWidth size="small" placeholder="Ej: ABC-1234" error={!!errors.plateNumber} helperText={errors.plateNumber?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="vin" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>VIN</label>
                 <TextField id="vin" {...register('vin')} fullWidth size="small" placeholder="Opcional" />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth size="small" error={!!errors.type}>
                   <InputLabel id="vtype-label">Tipo *</InputLabel>
                   <Controller name="type" control={control} render={({ field }) => (
@@ -186,7 +186,7 @@ const VehiclesPage: React.FC = () => {
                   {errors.type && <FormHelperText>{errors.type.message}</FormHelperText>}
                 </FormControl>
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth size="small" error={!!errors.status}>
                   <InputLabel id="vstatus-label">Estado *</InputLabel>
                   <Controller name="status" control={control} render={({ field }) => (
@@ -197,11 +197,11 @@ const VehiclesPage: React.FC = () => {
                   {errors.status && <FormHelperText>{errors.status.message}</FormHelperText>}
                 </FormControl>
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="maxWeight" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Cap. Máxima de Peso (kg) *</label>
                 <TextField id="maxWeight" {...register('maxWeightCapacityKg')} fullWidth size="small" type="number" slotProps={{ htmlInput: { min: 0, step: 0.1 } }} error={!!errors.maxWeightCapacityKg} helperText={errors.maxWeightCapacityKg?.message} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <label htmlFor="maxVol" style={{ display: 'block', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Cap. Máxima de Volumen (m³) *</label>
                 <TextField id="maxVol" {...register('maxVolumeCapacityM3')} fullWidth size="small" type="number" slotProps={{ htmlInput: { min: 0, step: 0.1 } }} error={!!errors.maxVolumeCapacityM3} helperText={errors.maxVolumeCapacityM3?.message} />
               </Grid>
